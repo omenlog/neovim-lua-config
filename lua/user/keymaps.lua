@@ -55,4 +55,4 @@ keymap("x", "∆", ":m '>+1<CR>gv=gv", opts)
 keymap("x", "˚", ":m '<-2<CR>gv=gv", opts)
 
 -- Trouble keymaps
-keymap("n","<C-d>",":TroubleToggle document_diagnostics<CR>",opts);
+keymap("n","∂",":TroubleToggle document_diagnostics<CR>",opts);
