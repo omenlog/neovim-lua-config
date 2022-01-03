@@ -91,6 +91,10 @@ return packer.startup(function(use)
 	-- LSP
   use "neovim/nvim-lspconfig" -- enable LSP
   use "williamboman/nvim-lsp-installer" -- simple to use language server installer
+	use {
+		"folke/trouble.nvim",
+		requires = "kyazdani42/nvim-web-devicons",
+	}
 
 	-- Status line
   use {
@@ -100,7 +104,7 @@ return packer.startup(function(use)
 
 	-- auto tag and autp pairs
 	use "windwp/nvim-ts-autotag"  
-	use "/windwp/nvim-autopairs"
+	use "windwp/nvim-autopairs"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

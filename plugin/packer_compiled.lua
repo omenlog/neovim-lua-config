@@ -117,7 +117,7 @@ _G.packer_plugins = {
   ["nvim-autopairs"] = {
     loaded = true,
     path = "/Users/o.lopez/.local/share/nvim/site/pack/packer/start/nvim-autopairs",
-    url = "https://github.com//windwp/nvim-autopairs"
+    url = "https://github.com/windwp/nvim-autopairs"
   },
   ["nvim-cmp"] = {
     loaded = true,
@@ -179,6 +179,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/o.lopez/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
+  },
+  ["trouble.nvim"] = {
+    loaded = true,
+    path = "/Users/o.lopez/.local/share/nvim/site/pack/packer/start/trouble.nvim",
+    url = "https://github.com/folke/trouble.nvim"
   },
   vim = {
     loaded = true,

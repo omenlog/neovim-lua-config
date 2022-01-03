@@ -38,10 +38,6 @@ keymap("n", "<C-s>", ":w<CR>", opts);
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
 
--- Ctrl + ; to insert it at the end of the line
---keymap("n", "<C-;>", "<S>ai;<Esc><CR>", opts)
-keymap("n", "<C-;>", ":vsplit<CR>", opts)
-
 -- Ctrl+P to launch Telescope find_files
 keymap("n", "<C-p>", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({previewer = false}))<cr>" ,opts)
 
@@ -57,3 +53,7 @@ keymap("v", "˚", ":m .-2<CR>==", opts)
 -- Move text u and down in Visual Block mode 
 keymap("x", "∆", ":m '>+1<CR>gv=gv", opts)
 keymap("x", "˚", ":m '<-2<CR>gv=gv", opts)
+
+-- Trouble keymaps
+keymap("n","<C-d>",":Trouble document_diagnostics<CR>",opts);
+keymap("n","∂",":TroubleClose <CR>",opts);
