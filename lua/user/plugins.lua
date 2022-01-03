@@ -98,8 +98,9 @@ return packer.startup(function(use)
 		requires = {'kyazdani42/nvim-web-devicons', opt = true}
 	}
 
-	-- auto tag
+	-- auto tag and autp pairs
 	use "windwp/nvim-ts-autotag"  
+	use "/windwp/nvim-autopairs"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
