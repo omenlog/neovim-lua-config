@@ -1,0 +1,10 @@
+local set = vim.opt
+
+set.number = true
+set.termguicolors = true
+set.swapfile = false 
+set.backup = false
+set.tabstop = 2
+set.smartindent = true
+set.shiftwidth = 2
+set.diffopt="vertical"
