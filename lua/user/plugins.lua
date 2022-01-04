@@ -96,6 +96,9 @@ return packer.startup(function(use)
 		requires = "kyazdani42/nvim-web-devicons",
 	}
 
+	-- Linting and formatting
+	use "jose-elias-alvarez/null-ls.nvim"
+
 	-- Status line
   use {
 		'nvim-lualine/lualine.nvim',
