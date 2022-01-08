@@ -66,6 +66,9 @@ keymap("v", "˚", ":m .-2<CR>==", opts)
 keymap("x", "∆", ":m '>+1<CR>gv=gv", opts)
 keymap("x", "˚", ":m '<-2<CR>gv=gv", opts)
 
+-- Duplicate a block of code in visual mode
+keymap("v", "<S-d>", ":'<,'>t'><CR>", opts)
+
 -- Trouble keymaps
 keymap("n","∂",":TroubleToggle document_diagnostics<CR>",opts);
 
