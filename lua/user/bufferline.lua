@@ -1,3 +1,12 @@
 require("bufferline").setup{
-	offsets = {{filetype = "NvimTree", text= "", padding = 1}}
+    options = {
+        offsets = {
+              {
+                filetype = "NvimTree",
+                text = "File Explorer",
+                highlight = "Directory",
+                text_align = "left"
+            }
+        }
+    }
 }
