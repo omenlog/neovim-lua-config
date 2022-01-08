@@ -69,6 +69,9 @@ keymap("x", "˚", ":m '<-2<CR>gv=gv", opts)
 -- Duplicate a block of code in visual mode
 keymap("v", "<S-d>", ":'<,'>t'><CR>", opts)
 
+keymap("n", "…", "A;<ESC>", opts)
+keymap("i", "…", "<ESC>A;<ESC>", opts)
+
 -- Trouble keymaps
 keymap("n","∂",":TroubleToggle document_diagnostics<CR>",opts);
 
