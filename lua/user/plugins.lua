@@ -83,16 +83,16 @@ return packer.startup(function(use)
 		"hrsh7th/nvim-cmp", -- The completion plugin
 		requires = { "L3MON4D3/LuaSnip" }
 	}
-  use "hrsh7th/cmp-buffer" -- buffer completions
-  use "hrsh7th/cmp-path" -- path completions
-  use "hrsh7th/cmp-cmdline" -- cmdline completions 
+    use "hrsh7th/cmp-buffer" -- buffer completions
+    use "hrsh7th/cmp-path" -- path completions
+    use "hrsh7th/cmp-cmdline" -- cmdline completions 
 	use "saadparwaiz1/cmp_luasnip" -- snippet completions
 	use "rafamadriz/friendly-snippets" -- snippets collection
 	use "hrsh7th/cmp-nvim-lsp"
 	
 	-- LSP
-  use "neovim/nvim-lspconfig" -- enable LSP
-  use "williamboman/nvim-lsp-installer" -- simple to use language server installer
+    use "neovim/nvim-lspconfig" -- enable LSP
+    use "williamboman/nvim-lsp-installer" -- simple to use language server installer
 	use {
 		"folke/trouble.nvim",
 		requires = "kyazdani42/nvim-web-devicons",
@@ -102,7 +102,7 @@ return packer.startup(function(use)
 	use "jose-elias-alvarez/null-ls.nvim"
 
 	-- Status line
-  use {
+    use {
 		'nvim-lualine/lualine.nvim',
 		requires = {'kyazdani42/nvim-web-devicons', opt = true}
 	}
