@@ -41,6 +41,10 @@ keymap("v", ">", ">gv", opts)
 -- Ctrl+P to launch Telescope find_files
 keymap("n", "<C-p>", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({previewer = false}))<cr>" ,opts)
 
+-- Buffers keymaps
+keymap("n", "<S-l>", ":bnext<CR>", opts)
+keymap("n", "<S-h>", ":bprevious<CR>", opts)
+keymap("n", "<C-w>", ":bd<CR>", opts)
 
 -- Move text u and down in Normal mode 
 keymap("n", "∆", ":m .+1<CR>==", opts)
@@ -56,3 +60,4 @@ keymap("x", "˚", ":m '<-2<CR>gv=gv", opts)
 
 -- Trouble keymaps
 keymap("n","∂",":TroubleToggle document_diagnostics<CR>",opts);
+

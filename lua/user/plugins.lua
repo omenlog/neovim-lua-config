@@ -59,6 +59,8 @@ return packer.startup(function(use)
     config = function() require'nvim-tree'.setup {} end
   }
 
+	use {'akinsho/bufferline.nvim'}
+
 	-- Git integration
 	use "tpope/vim-fugitive"
 	use "mhinz/vim-signify"
