@@ -48,6 +48,7 @@ keymap("v", ">", ">gv", opts)
 
 -- Ctrl+P to launch Telescope find_files
 keymap("n", "<C-p>", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({previewer = false}))<cr>" ,opts)
+keymap("n", "ƒ", "<cmd>lua require'telescope.builtin'.live_grep(require('telescope.themes').get_dropdown({previewer = false}))<cr>" ,opts)
 
 -- Buffers keymaps
 keymap("n", "<S-l>", ":bnext<CR>", opts)
