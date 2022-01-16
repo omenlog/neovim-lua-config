@@ -8,5 +8,6 @@ set.tabstop = 2
 set.smartindent = true
 set.shiftwidth = 2
 set.diffopt="vertical"
+set.cmdheight = 2
 -- Setting AutoSave when the Neovim lost focus
 vim.api.nvim_command('autocmd FocusLost * silent update')
