@@ -49,6 +49,12 @@ return packer.startup(function(use)
 	use 'tomasr/molokai'
 	use 'dracula/vim'
 	use 'gosukiwi/vim-atom-dark'
+    use 'tomasiser/vim-code-dark'
+    use 'bluz71/vim-nightfly-guicolors'
+    use 'yonlu/omni.vim'
+    use 'navarasu/onedark.nvim'
+    use 'rose-pine/neovim'
+    use 'ishan9299/nvim-solarized-lua'
 
 	-- File explorer
   use {

@@ -119,6 +119,11 @@ _G.packer_plugins = {
     path = "/Users/o.lopez/.local/share/nvim/site/pack/packer/start/molokai",
     url = "https://github.com/tomasr/molokai"
   },
+  neovim = {
+    loaded = true,
+    path = "/Users/o.lopez/.local/share/nvim/site/pack/packer/start/neovim",
+    url = "https://github.com/rose-pine/neovim"
+  },
   ["null-ls.nvim"] = {
     loaded = true,
     path = "/Users/o.lopez/.local/share/nvim/site/pack/packer/start/null-ls.nvim",
@@ -143,6 +148,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/o.lopez/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
+  },
+  ["nvim-solarized-lua"] = {
+    loaded = true,
+    path = "/Users/o.lopez/.local/share/nvim/site/pack/packer/start/nvim-solarized-lua",
+    url = "https://github.com/ishan9299/nvim-solarized-lua"
   },
   ["nvim-tree.lua"] = {
     config = { "\27LJ\2\n;\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\14nvim-tree\frequire\0" },
@@ -169,6 +179,16 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/o.lopez/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
     url = "https://github.com/kyazdani42/nvim-web-devicons"
+  },
+  ["omni.vim"] = {
+    loaded = true,
+    path = "/Users/o.lopez/.local/share/nvim/site/pack/packer/start/omni.vim",
+    url = "https://github.com/yonlu/omni.vim"
+  },
+  ["onedark.nvim"] = {
+    loaded = true,
+    path = "/Users/o.lopez/.local/share/nvim/site/pack/packer/start/onedark.nvim",
+    url = "https://github.com/navarasu/onedark.nvim"
   },
   ["packer.nvim"] = {
     loaded = true,
@@ -205,10 +225,20 @@ _G.packer_plugins = {
     path = "/Users/o.lopez/.local/share/nvim/site/pack/packer/start/vim-atom-dark",
     url = "https://github.com/gosukiwi/vim-atom-dark"
   },
+  ["vim-code-dark"] = {
+    loaded = true,
+    path = "/Users/o.lopez/.local/share/nvim/site/pack/packer/start/vim-code-dark",
+    url = "https://github.com/tomasiser/vim-code-dark"
+  },
   ["vim-fugitive"] = {
     loaded = true,
     path = "/Users/o.lopez/.local/share/nvim/site/pack/packer/start/vim-fugitive",
     url = "https://github.com/tpope/vim-fugitive"
+  },
+  ["vim-nightfly-guicolors"] = {
+    loaded = true,
+    path = "/Users/o.lopez/.local/share/nvim/site/pack/packer/start/vim-nightfly-guicolors",
+    url = "https://github.com/bluz71/vim-nightfly-guicolors"
   },
   ["vim-signify"] = {
     loaded = true,
