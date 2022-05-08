@@ -1,5 +1,4 @@
 local set = vim.opt
-local global = vim.g
 
 set.number = true
 set.termguicolors = true
@@ -16,5 +15,3 @@ set.mouse = "a"
 set.hlsearch = false
 set.relativenumber = true
 
--- Setting AutoSave when the Neovim lost focus
-vim.api.nvim_command('autocmd FocusLost * silent update')
