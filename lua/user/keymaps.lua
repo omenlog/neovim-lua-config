@@ -41,14 +41,13 @@ keymap("n", "<leader>e", ":NvimTreeToggle <CR>", opts)
 keymap("i", "<C-s>", "<ESC>:w<CR>", opts);
 keymap("n", "<C-s>", ":w<CR>", opts);
 
--- Visual --
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
 
 -- Ctrl+P to launch Telescope find_files
-keymap("n", "<C-p>", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({previewer = false}))<cr>" ,opts)
-keymap("n", "ƒ", "<cmd>lua require'telescope.builtin'.live_grep(require('telescope.themes').get_dropdown({previewer = false}))<cr>" ,opts)
+keymap("n", "<C-p>", ":Telescope find_files<CR>" ,opts)
+keymap("n", "ƒ", ":Telescope live_grep<CR>" ,opts)
 
 -- Buffers keymaps
 keymap("n", "<S-l>", ":bnext<CR>", opts)
