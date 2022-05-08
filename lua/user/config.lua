@@ -12,7 +12,9 @@ set.diffopt="vertical"
 set.cmdheight = 2
 set.expandtab = true
 set.smarttab = true
-set.foldmethod="indent"
+set.mouse = "a"
+set.hlsearch = false
+set.relativenumber = true
 
 -- Setting AutoSave when the Neovim lost focus
 vim.api.nvim_command('autocmd FocusLost * silent update')
