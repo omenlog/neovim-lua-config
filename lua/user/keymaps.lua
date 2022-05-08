@@ -76,3 +76,6 @@ keymap("i", "…", "<ESC>A;<ESC>", opts)
 -- Trouble keymaps
 keymap("n","∂",":TroubleToggle document_diagnostics<CR>",opts);
 
+-- Git keymaps
+keymap("n","∫",":Git blame<CR>",opts);
+keymap("n","©",":Git <CR>:on<CR>",opts);
