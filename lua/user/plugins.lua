@@ -107,6 +107,9 @@ return packer.startup(function(use)
 	-- Linting and formatting
 	use "jose-elias-alvarez/null-ls.nvim"
 
+    -- Comments
+   use 'numToStr/Comment.nvim'
+
 	-- Status line
     use {
 		'nvim-lualine/lualine.nvim',
