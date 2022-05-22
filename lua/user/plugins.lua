@@ -73,9 +73,10 @@ return packer.startup(function(use)
 	
 	-- Fuzzy finder 
 	use {
-  	'nvim-telescope/telescope.nvim',
-  	requires = { {'nvim-lua/plenary.nvim'} }
+        'nvim-telescope/telescope.nvim',
+        requires = { {'nvim-lua/plenary.nvim'} }
 	}
+    use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
 
 	-- Syntax highlight
 	use {

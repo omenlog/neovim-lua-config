@@ -109,11 +109,6 @@ _G.packer_plugins = {
     path = "/Users/o.lopez/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
-  ["friendly-snippets"] = {
-    loaded = true,
-    path = "/Users/o.lopez/.local/share/nvim/site/pack/packer/start/friendly-snippets",
-    url = "https://github.com/rafamadriz/friendly-snippets"
-  },
   ["lualine.nvim"] = {
     loaded = true,
     path = "/Users/o.lopez/.local/share/nvim/site/pack/packer/start/lualine.nvim",
@@ -209,6 +204,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/o.lopez/.local/share/nvim/site/pack/packer/start/popup.nvim",
     url = "https://github.com/nvim-lua/popup.nvim"
+  },
+  ["telescope-fzf-native.nvim"] = {
+    loaded = true,
+    path = "/Users/o.lopez/.local/share/nvim/site/pack/packer/start/telescope-fzf-native.nvim",
+    url = "https://github.com/nvim-telescope/telescope-fzf-native.nvim"
   },
   ["telescope.nvim"] = {
     loaded = true,
