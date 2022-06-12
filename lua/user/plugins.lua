@@ -68,7 +68,8 @@ return packer.startup(function(use)
     use {'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons'}
 
 	-- Git integration
-	use "tpope/vim-fugitive"
+	-- use "tpope/vim-fugitive"
+    use "kdheepak/lazygit.nvim" 
 	use "mhinz/vim-signify"
 	
 	-- Fuzzy finder 
