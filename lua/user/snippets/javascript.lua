@@ -40,6 +40,27 @@ local test_snippets = {
         ]], {i(1), i(0)})
     )
 }
+
+local react_snippets = {
+    s("rfc", 
+        fmt("{}",{ c(1, {
+            fmt(
+            [[
+                const {} = ({}) => {{
+                    {}
+                }};
+            ]], {i(1), i(2), i(0)}),
+            fmt(
+            [[
+                function {}({}) {{
+                    {}
+                }}
+            ]], {i(1), i(2), i(0)}),
+            })
+        })
+    )
+}
+
 local function_snippets = {
     s("fn", 
         fmt("{}",{ c(1, {
