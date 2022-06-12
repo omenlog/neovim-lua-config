@@ -88,7 +88,7 @@ keymap("n","∂",":TroubleToggle document_diagnostics<CR>",opts);
 
 -- Git keymaps
 keymap("n","∫",":Git blame<CR>",opts);
-keymap("n","©",":Git <CR>:on<CR>",opts);
+keymap("n","©",":LazyGit <CR>",opts);
 
 -- Luasnip keymaps
 keymap("i", "<C-n>", "<Plug>luasnip-next-choice", {})
