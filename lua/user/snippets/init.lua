@@ -14,6 +14,7 @@ ls.config.set_config = {
     enable_autosnippets = true
 }
 
+-- set keybinds for both INSERT and VISUAL.
 require("user.snippets.javascript").setup()
 require("user.snippets.typescript").setup()
 
