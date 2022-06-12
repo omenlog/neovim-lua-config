@@ -24,6 +24,22 @@ local console_snippets = {
     s("ce", fmt("console.error('{}');", {i(1)})),
 }
 
+local test_snippets = {
+    s("desc", fmt(
+        [[
+            describe('{}', () => {{
+                {}
+            }});
+        ]], {i(1), i(0)})
+    ),
+    s("it", fmt(
+        [[
+            it('{}', () => {{
+                {}
+            }});
+        ]], {i(1), i(0)})
+    )
+}
 local function_snippets = {
     s("fn", 
         fmt("{}",{ c(1, {
@@ -68,13 +84,16 @@ local snippets = utils.merge(
     imports_snippets, 
     exports_snippets,
     console_snippets,
-    function_snippets
+    function_snippets,
+    test_snippets
 )
+
+local js_react_snippets = utils.merge(snippets, react_snippets)
  
 M.setup = function()
     ls.add_snippets(null,{
         javascript = snippets,
-        javascriptreact = snippets
+        javascriptreact = js_react_snippets
     })
 end
 
