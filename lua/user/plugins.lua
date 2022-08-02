@@ -70,6 +70,7 @@ return packer.startup(function(use)
 	-- Git integration
     use "kdheepak/lazygit.nvim" 
 	use "mhinz/vim-signify"
+    use "f-person/git-blame.nvim"
 	
 	-- Fuzzy finder 
 	use {
@@ -80,10 +81,11 @@ return packer.startup(function(use)
 
 	-- Syntax highlight
 	use {
-    'nvim-treesitter/nvim-treesitter',
-    run = ':TSUpdate'
-  }
+        'nvim-treesitter/nvim-treesitter',
+        run = ':TSUpdate'
+    }
 	use 'p00f/nvim-ts-rainbow'
+    use 'nvim-treesitter/nvim-treesitter-refactor'
 
 	-- Autocompletion
 	use {

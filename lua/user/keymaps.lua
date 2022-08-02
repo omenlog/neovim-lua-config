@@ -96,3 +96,5 @@ keymap("s", "<C-n>", "<Plug>luasnip-next-choice", {})
 keymap("i", "<C-p>", "<Plug>luasnip-previous-choice", {})
 keymap("s", "<C-p>", "<Plug>luasnip-previous-choice", {})
 
+-- Folding keymaps
+keymap('n', "<leader><leader>","za", {})

@@ -109,6 +109,16 @@ _G.packer_plugins = {
     path = "/Users/o.lopez/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
+  ["git-blame.nvim"] = {
+    loaded = true,
+    path = "/Users/o.lopez/.local/share/nvim/site/pack/packer/start/git-blame.nvim",
+    url = "https://github.com/f-person/git-blame.nvim"
+  },
+  ["lazygit.nvim"] = {
+    loaded = true,
+    path = "/Users/o.lopez/.local/share/nvim/site/pack/packer/start/lazygit.nvim",
+    url = "https://github.com/kdheepak/lazygit.nvim"
+  },
   ["lualine.nvim"] = {
     loaded = true,
     path = "/Users/o.lopez/.local/share/nvim/site/pack/packer/start/lualine.nvim",
@@ -164,6 +174,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/o.lopez/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
+  },
+  ["nvim-treesitter-refactor"] = {
+    loaded = true,
+    path = "/Users/o.lopez/.local/share/nvim/site/pack/packer/start/nvim-treesitter-refactor",
+    url = "https://github.com/nvim-treesitter/nvim-treesitter-refactor"
   },
   ["nvim-ts-autotag"] = {
     loaded = true,
@@ -234,11 +249,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/o.lopez/.local/share/nvim/site/pack/packer/start/vim-code-dark",
     url = "https://github.com/tomasiser/vim-code-dark"
-  },
-  ["vim-fugitive"] = {
-    loaded = true,
-    path = "/Users/o.lopez/.local/share/nvim/site/pack/packer/start/vim-fugitive",
-    url = "https://github.com/tpope/vim-fugitive"
   },
   ["vim-nightfly-guicolors"] = {
     loaded = true,

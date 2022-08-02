@@ -14,4 +14,6 @@ set.smarttab = true
 set.mouse = "a"
 set.hlsearch = false
 set.relativenumber = true
+set.foldmethod="indent"
+set.foldenable=false
 
