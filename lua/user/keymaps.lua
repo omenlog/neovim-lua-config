@@ -98,3 +98,6 @@ keymap("s", "<C-p>", "<Plug>luasnip-previous-choice", {})
 
 -- Folding keymaps
 keymap('n', "<leader><leader>","za", {})
+
+-- tooling keymaps
+keymap('n', "<leader>t",":!npm run jest:update %<CR>", {})
