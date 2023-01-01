@@ -55,6 +55,7 @@ return packer.startup(function(use)
     use 'navarasu/onedark.nvim'
     use 'rose-pine/neovim'
     use 'ishan9299/nvim-solarized-lua'
+    use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
 
 	-- File explorer
   use {
