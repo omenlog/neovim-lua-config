@@ -16,4 +16,10 @@ set.hlsearch = false
 set.relativenumber = true
 set.foldmethod="indent"
 set.foldenable=false
+set.clipboard="unnamed"
+set.laststatus=3
 
+vim.o.updatetime = 500
+
+vim.o.ls = 0;
+vim.o.ch = 0;
