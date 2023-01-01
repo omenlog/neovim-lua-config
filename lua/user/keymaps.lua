@@ -47,7 +47,6 @@ keymap("v", ">", ">gv", opts)
 
 -- Ctrl+P to launch Telescope find_files
 keymap("n", "<C-p>", ":Telescope find_files<CR>" ,opts)
-keymap("n", "ƒ", ":Telescope live_grep<CR>" ,opts)
 keymap("n", "<leader>s", ":Telescope live_grep<CR>" ,opts)
 
 -- Buffers keymaps
@@ -89,7 +88,7 @@ keymap("n","∂",":TroubleToggle document_diagnostics<CR>",opts);
 
 -- Git keymaps
 keymap("n","∫",":Git blame<CR>",opts);
-keymap("n","©",":LazyGit <CR>",opts);
+keymap("n","<leader>g",":LazyGit <CR>",opts);
 
 -- Luasnip keymaps
 keymap("i", "<C-n>", "<Plug>luasnip-next-choice", {})
