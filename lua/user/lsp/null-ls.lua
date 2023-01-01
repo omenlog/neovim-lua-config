@@ -10,19 +10,31 @@ null_ls.setup({
 	debug = false,
 	sources = {
         formatting.stylua,
-		formatting.eslint_d,
-        --
+		formatting.eslint_d.with({
+            condition = function(utils)
+                return not utils.root_has_file({ "deno.json", "deno.jsonc"})
+            end,
+        }),
         -- Eslint diagnostics
 		diagnostics.eslint_d.with({
             filetypes = {"javascript", "javascriptreact", "typescript", "typescriptreact"},
-            extra_args = {"--config", ".eslintrc"}
+            extra_args = {"--config", ".eslintrc"},
+            condition = function(utils)
+                return not utils.root_has_file({ "deno.json", "deno.jsonc"})
+            end,
         }),
         diagnostics.tsc.with({
-            prefer_local = "node_modules/.bin"
+            prefer_local = "node_modules/.bin",
+            condition = function(utils)
+                return not utils.root_has_file({ "deno.json", "deno.jsonc"})
+            end,
         }),
 		diagnostics.stylelint.with({
             extra_args = {"--config" ,""},
-            prefer_local = "node_modules/.bin"
+            prefer_local = "node_modules/.bin",
+            condition = function(utils)
+                return not utils.root_has_file({ "deno.json", "deno.jsonc"})
+            end,
 		})
 	},
 })

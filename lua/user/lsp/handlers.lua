@@ -13,23 +13,30 @@ M.setup = function()
   end
 
   local config = {
-    -- disable virtual text
-    virtual_text = true,
-    -- show signs
-    signs = {
-      active = signs,
-    },
-    update_in_insert = true,
-    underline = true,
-    severity_sort = true,
     float = {
-      focusable = false,
-      style = "minimal",
-      border = "rounded",
-      source = "always",
-      header = "",
-      prefix = "",
+        focusable = false,
+        style = "minimal",
+        border = "rounded",
     },
+    diagnostic = {
+        -- disable virtual text
+        virtual_text = false,
+        -- show signs
+        signs = {
+          active = signs,
+        },
+        update_in_insert = true,
+        underline = true,
+        severity_sort = true,
+        float = {
+          focusable = false,
+          style = "minimal",
+          border = "rounded",
+          source = "always",
+          header = "",
+          prefix = "",
+        }
+    }
   }
 
   vim.diagnostic.config(config)
@@ -83,10 +90,29 @@ local function lsp_keymaps(bufnr)
   vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
 end
 
-M.on_attach = function(client, bufnr)
+M.on_attach = function(client, bufnr)  
   if client.name == "tsserver" then
     client.server_capabilities.document_formatting = false
   end
+
+  -- Avoid clash between tsserver and denols
+  local active_clients = vim.lsp.get_active_clients()
+  if client.name == 'denols' then
+    for _, client_ in pairs(active_clients) do
+      -- stop tsserver if denols is already active
+      if client_.name == 'tsserver' then
+        client_.stop()
+      end
+    end
+  elseif client.name == 'tsserver' then
+    for _, client_ in pairs(active_clients) do
+      -- prevent tsserver from starting if denols is already active
+      if client_.name == 'denols' then
+        client.stop()
+      end
+    end
+  end
+
   lsp_keymaps(bufnr)
   lsp_highlight_document(client)
 end
