@@ -64,7 +64,8 @@ return packer.startup(function(use)
     },
     config = function() require'nvim-tree'.setup {} end
   }
-    -- using packer.nvim
+
+    -- Buffers Tools
     use {'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons'}
 
 	-- Git integration
@@ -117,6 +118,8 @@ return packer.startup(function(use)
 		'nvim-lualine/lualine.nvim',
 		requires = {'kyazdani42/nvim-web-devicons', opt = true}
 	}
+
+    use "ggandor/leap.nvim"
 
 	-- auto tag and autp pairs
 	use "windwp/nvim-ts-autotag"  
