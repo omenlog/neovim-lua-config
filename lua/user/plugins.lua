@@ -41,9 +41,9 @@ packer.init {
 -- Install your plugins here
 return packer.startup(function(use)
   -- My plugins here
-  use "wbthomason/packer.nvim" -- Have packer manage itself
-  use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
-  use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
+    use "wbthomason/packer.nvim" -- Have packer manage itself
+    use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
+    use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
 
   -- Colorschemes
 	use 'tomasr/molokai'
@@ -55,16 +55,19 @@ return packer.startup(function(use)
     use 'navarasu/onedark.nvim'
     use 'rose-pine/neovim'
     use 'ishan9299/nvim-solarized-lua'
+    use 'folke/tokyonight.nvim'
+
+
     use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
 
 	-- File explorer
-  use {
+    use {
     'kyazdani42/nvim-tree.lua',
     requires = {
       'kyazdani42/nvim-web-devicons', -- optional, for file icon
     },
     config = function() require'nvim-tree'.setup {} end
-  }
+    }
 
     -- Buffers Tools
     use {'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons'}
@@ -112,7 +115,7 @@ return packer.startup(function(use)
 	use "jose-elias-alvarez/null-ls.nvim"
 
     -- Comments
-   use 'numToStr/Comment.nvim'
+    use 'numToStr/Comment.nvim'
 
 	-- Status line
     use {
