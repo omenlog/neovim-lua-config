@@ -124,11 +124,6 @@ _G.packer_plugins = {
     path = "/Users/o.lopez/.local/share/nvim/site/pack/packer/start/lazygit.nvim",
     url = "https://github.com/kdheepak/lazygit.nvim"
   },
-  ["leap.nvim"] = {
-    loaded = true,
-    path = "/Users/o.lopez/.local/share/nvim/site/pack/packer/start/leap.nvim",
-    url = "https://github.com/ggandor/leap.nvim"
-  },
   ["lualine.nvim"] = {
     loaded = true,
     path = "/Users/o.lopez/.local/share/nvim/site/pack/packer/start/lualine.nvim",

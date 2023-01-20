@@ -123,8 +123,6 @@ return packer.startup(function(use)
 		requires = {'kyazdani42/nvim-web-devicons', opt = true}
 	}
 
-    use "ggandor/leap.nvim"
-
 	-- auto tag and autp pairs
 	use "windwp/nvim-ts-autotag"  
 	use "windwp/nvim-autopairs"
