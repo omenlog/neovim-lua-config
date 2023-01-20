@@ -24,6 +24,10 @@ keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 
+-- Better vertical movement
+keymap("n", "<C-d>", "<C-d>zz", opts)
+keymap("n", "<C-u>", "<C-u>zz", opts)
+
 -- Split screen
 keymap("n", "<C-]>", ":vsplit<CR>", opts)
 keymap("n", "<C-[>", ":split<CR>", opts)
@@ -101,3 +105,4 @@ keymap('n', "<leader><leader>","za", {})
 
 -- tooling keymaps
 keymap('n', "<leader>t",":!npm run jest:update %<CR>", {})
+keymap('n', "<leader>dt",":!deno test<CR>", {})
