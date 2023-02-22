@@ -88,7 +88,7 @@ keymap("n", "…", "A;<ESC>", opts)
 keymap("i", "…", "<ESC>A;<ESC>", opts)
 
 -- Trouble keymaps
-keymap("n","∂",":TroubleToggle document_diagnostics<CR>",opts);
+keymap("n","<leader>d",":TroubleToggle document_diagnostics<CR>",opts);
 
 -- Git keymaps
 keymap("n","∫",":Git blame<CR>",opts);
