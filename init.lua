@@ -1,4 +1,3 @@
-require("user.config")
 -- core configurations
 require("user.core.options")
 require("user.plugins")
