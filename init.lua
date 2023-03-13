@@ -1,6 +1,8 @@
 -- core configurations
 require("user.core.options")
 require("user.plugins")
+require("user.core.keymaps")
+
 require("user.colorschemes")
 require("user.keymaps")
 require("user.treesitter")

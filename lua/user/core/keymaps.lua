@@ -18,11 +18,9 @@ keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
--- Better window navigation
-keymap("n", "<C-h>", "<C-w>h", opts)
-keymap("n", "<C-j>", "<C-w>j", opts)
-keymap("n", "<C-k>", "<C-w>k", opts)
-keymap("n", "<C-l>", "<C-w>l", opts)
+-- buffer keymaps
+keymap("n", "<leader>sm", ":MaximizerToggle<CR>", opts)
+keymap("n", "<leader>w", ":close<CR>", opts)
 
 -- Better vertical movement
 keymap("n", "<C-d>", "<C-d>zz", opts)
@@ -49,9 +47,12 @@ keymap("n", "<C-s>", ":w<CR>", opts);
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
 
--- Ctrl+P to launch Telescope find_files
+-- Telescope
 keymap("n", "<C-p>", ":Telescope find_files<CR>" ,opts)
-keymap("n", "<leader>s", ":Telescope live_grep<CR>" ,opts)
+keymap("n", "<leader>fs", ":Telescope live_grep<CR>" ,opts)
+keymap("n", "<leader>fw", ":Telescope grep_string<CR>" ,opts)
+keymap("n", "<leader>fb", ":Telescope buffers<CR>" ,opts)
+keymap("n", "<leader>fh", ":Telescope help_tags<CR>" ,opts)
 
 -- Buffers keymaps
 keymap("n", "<S-l>", ":bnext<CR>", opts)
