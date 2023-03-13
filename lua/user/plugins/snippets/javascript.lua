@@ -1,4 +1,4 @@
-local utils = require("user.snippets.utils");
+local utils = require("user.plugins.snippets.utils");
 local status_ok, ls = pcall(require, "luasnip")
 
 local M = {}

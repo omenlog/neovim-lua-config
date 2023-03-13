@@ -15,6 +15,6 @@ ls.config.set_config = {
 }
 
 -- set keybinds for both INSERT and VISUAL.
-require("user.snippets.javascript").setup()
-require("user.snippets.typescript").setup()
+require("user.plugins.snippets.javascript").setup()
+require("user.plugins.snippets.typescript").setup()
 

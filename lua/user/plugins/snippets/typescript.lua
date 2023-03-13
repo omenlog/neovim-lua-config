@@ -1,5 +1,5 @@
-local js = require("user.snippets.javascript")
-local utils = require("user.snippets.utils")
+local js = require("user.plugins.snippets.javascript")
+local utils = require("user.plugins.snippets.utils")
 local status_ok, ls = pcall(require, "luasnip")
 
 local s = ls.snippet
