@@ -1,17 +1,18 @@
+-- plugins initialization
+require("user.plugins")
+
 -- core configurations
 require("user.core.options")
-require("user.plugins")
 require("user.core.keymaps")
 
+-- plugins configurations
 require("user.colorschemes")
-require("user.keymaps")
 require("user.treesitter")
 require("user.telescope")
 require("user.lualine")
 require("user.signify")
 require("user.cmp")
 require("user.autopairs")
-require("user.trouble")
 require("user.plugins.lsp")
 require("user.bufferline")
 require("user.nvimtree")
