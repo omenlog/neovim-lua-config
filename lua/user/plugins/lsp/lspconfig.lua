@@ -103,6 +103,7 @@ lsp_config.lua_ls.setup {
 typescript.setup({
     server = {
         capabilities = capabilities,
+        single_file_support = false,
         on_attach = on_attach,
         root_dir = lsp_config.util.root_pattern("package.json")
     }
