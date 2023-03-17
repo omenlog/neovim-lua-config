@@ -7,7 +7,15 @@ end
 -- formatting
 null_ls.setup({
     sources = {
-        null_ls.builtins.diagnostics.eslint_d,
-        null_ls.builtins.formatting.eslint_d
+        null_ls.builtins.diagnostics.eslint_d.with({
+            condition = function(utils) 
+                return utils.root_has_file({ '.eslintrc', '.eslint.json' })
+            end
+        }),
+        null_ls.builtins.formatting.eslint_d.with({
+            condition = function(utils)
+                return utils.root_has_file({ '.eslintrc', '.eslint.json' })
+            end
+        })
     }
 })
