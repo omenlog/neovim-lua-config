@@ -19,7 +19,7 @@ end
 vim.cmd [[
   augroup packer_user_config
     autocmd!
-    autocmd BufWritePost plugins.lua source <afile> | PackerSync
+    autocmd BufWritePost plugins_init.lua source <afile> | PackerSync
   augroup end
 ]]
 
@@ -57,13 +57,10 @@ return packer.startup(function(use)
     use 'ishan9299/nvim-solarized-lua'
     use 'folke/tokyonight.nvim'
     use 'Mofiqul/vscode.nvim'
+    use { "catppuccin/nvim", as = "catppuccin" }
 
-    use({
-        "iamcco/markdown-preview.nvim",
-        run = "cd app && npm install",
-        setup = function() vim.g.mkdp_filetypes = { "markdown" } end,
-        ft = { "markdown" },
-    })
+    use({ 'toppair/peek.nvim', run = 'deno task --quiet build:fast' })
+
 
     -- File explorer
     use {
@@ -122,8 +119,8 @@ return packer.startup(function(use)
         "glepnir/lspsaga.nvim",
         branch = "main",
         requires = {
-          { "nvim-tree/nvim-web-devicons" },
-          { "nvim-treesitter/nvim-treesitter" },
+            { "nvim-tree/nvim-web-devicons" },
+            { "nvim-treesitter/nvim-treesitter" },
         },
     })
 
@@ -137,6 +134,18 @@ return packer.startup(function(use)
     use {
         'nvim-lualine/lualine.nvim',
         requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+    }
+
+    -- nav buddy
+    use {
+        "SmiteshP/nvim-navbuddy",
+        requires = {
+            "neovim/nvim-lspconfig",
+            "SmiteshP/nvim-navic",
+            "MunifTanjim/nui.nvim",
+            "numToStr/Comment.nvim",    -- Optional
+            "nvim-telescope/telescope.nvim" -- Optional
+        }
     }
 
     -- auto tag and autp pairs
