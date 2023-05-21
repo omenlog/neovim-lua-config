@@ -18,13 +18,19 @@ keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
+keymap('i', "jj", '<ESC>:w<CR>', opts);
+keymap('i', "kk", '<ESC>:w<CR>', opts);
+
+-- code navigation
+keymap("n", "<leader>cn", ":Navbuddy<CR>", opts)
+
 -- buffer keymaps
 keymap("n", "<leader>sm", ":MaximizerToggle<CR>", opts)
 keymap("n", "<leader>w", ":close<CR>", opts)
 
 -- Better vertical movement
-keymap("n", "<C-d>", "<C-d>zz", opts)
-keymap("n", "<C-u>", "<C-u>zz", opts)
+keymap("n", "<leader>d", "<C-d>zz", opts)
+keymap("n", "<leader>u", "<C-u>zz", opts)
 
 -- Split screen
 keymap("n", "<C-]>", ":vsplit<CR>", opts)
@@ -39,16 +45,16 @@ keymap("n", "<S-Right>", ":vertical resize +2<CR>", opts)
 -- Toggle File Explorer
 keymap("n", "<leader>e", ":NvimTreeToggle <CR>", opts)
 
--- Ctrl + S to save
-keymap("i", "<C-s>", "<ESC>:w<CR>", opts);
-keymap("n", "<C-s>", ":w<CR>", opts);
-
+-- Save keymaps
+keymap("n", "<leader>s", ":w<CR>", opts);
+--
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
 
 -- Telescope
-keymap("n", "<C-p>", ":Telescope find_files<CR>" ,opts)
+keymap("n", "<leader>p", ":Telescope find_files<CR>" ,opts)
+keymap("n", "<leader>ff", ":Telescope find_files<CR>" ,opts)
 keymap("n", "<leader>fs", ":Telescope live_grep<CR>" ,opts)
 keymap("n", "<leader>fw", ":Telescope grep_string<CR>" ,opts)
 keymap("n", "<leader>fb", ":Telescope buffers<CR>" ,opts)
@@ -85,11 +91,7 @@ keymap("x", "˚", ":m '<-2<CR>gv=gv", opts)
 keymap("v", "<S-d>", ":'<,'>t'><CR>", opts)
 
 -- Add ; at the end of the line with <Opt-;>k
-keymap("n", "…", "A;<ESC>", opts)
-keymap("i", "…", "<ESC>A;<ESC>", opts)
-
--- Trouble keymaps
-keymap("n","<leader>d",":TroubleToggle document_diagnostics<CR>",opts);
+keymap("n", "<leader>;", "A;<ESC>", opts)
 
 -- Git keymaps
 keymap("n","∫",":Git blame<CR>",opts);
@@ -106,4 +108,7 @@ keymap('n', "<leader><leader>","za", {})
 
 -- tooling keymaps
 keymap('n', "<leader>t",":!npm run jest:update %<CR>", {})
-keymap('n', "<leader>dt",":!deno test<CR>", {})
+keymap('n', "<leader>td",":!deno test<CR>", {})
+
+-- Peek Markdown keymap
+keymap('n', "<leader>mp","<cmd>lua require('peek').open()<CR>", {})
