@@ -7,19 +7,19 @@ end
 -- import cmp-nvim-lsp plugin safely
 local cmp_nvim_lsp_status, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
 if not cmp_nvim_lsp_status then
-  return
+    return
 end
 
 -- import typescript plugin safely
 local typescript_setup, typescript = pcall(require, "typescript")
 if not typescript_setup then
-  return
+    return
 end
 
 local navbuddy_setup, navbuddy = pcall(require, "nvim-navbuddy")
 if not navbuddy_setup then
-  print('nav buddy not found')
-  return
+    print('nav buddy not found')
+    return
 end
 
 -- Mappings.
@@ -49,23 +49,35 @@ local on_attach = function(client, bufnr)
         print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
     end, bufopts)
     vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
-    vim.keymap.set('n', '<space>f', function() vim.lsp.buf.format { async = true } end, bufopts)
+
 
     -- lsp saga keymap
-    vim.keymap.set({"n","v"}, "<leader>ca", "<cmd>Lspsaga code_action<CR>")
+    vim.keymap.set({ "n", "v" }, "<leader>ca", "<cmd>Lspsaga code_action<CR>")
     vim.keymap.set("n", "gd", "<cmd>Lspsaga peek_definition<CR>")
     vim.keymap.set("n", "<leader>cd", "<cmd>Lspsaga show_cursor_diagnostics<CR>", opts) -- show diagnostics for cursor
-    vim.keymap.set("n", "<leader>ld", "<cmd>Lspsaga show_line_diagnostics<CR>", opts) -- show  diagnostics for line   vim.keymap.set("n", "<leader>d", "<cmd>Lspsaga show_cursor_diagnostics<CR>", opts) -- show diagnostics for cursor
+    vim.keymap.set("n", "<leader>ld", "<cmd>Lspsaga show_line_diagnostics<CR>", opts)   -- show  diagnostics for line   vim.keymap.set("n", "<leader>d", "<cmd>Lspsaga show_cursor_diagnostics<CR>", opts) -- show diagnostics for cursor
     vim.keymap.set('n', '[d', "<cmd>Lspsaga diagnostic_jump_prev<CR>", opts)
     vim.keymap.set('n', ']d', "<cmd>Lspsaga diagnostic_jump_next<CR>", opts)
     vim.keymap.set("n", "<leader>rn", "<cmd>Lspsaga rename<CR>", opts) -- smart rename
 
-     -- typescript specific keymaps (e.g. rename file and update imports)
+    -- typescript specific keymaps (e.g. rename file and update imports)
     if client.name == "tsserver" then
-        vim.keymap.set("n", "<leader>rf", ":TypescriptRenameFile<CR>") -- rename file and update imports
+        vim.keymap.set("n", "<leader>rf", ":TypescriptRenameFile<CR>")      -- rename file and update imports
         vim.keymap.set("n", "<leader>oi", ":TypescriptOrganizeImports<CR>") -- organize imports (not in youtube nvim video)
-        vim.keymap.set("n", "<leader>ru", ":TypescriptRemoveUnused<CR>") -- remove unused variables (not in youtube nvim video)
+        vim.keymap.set("n", "<leader>ru", ":TypescriptRemoveUnused<CR>")    -- remove unused variables (not in youtube nvim video)
     end
+
+    if client.name == 'ocamllsp' then
+        vim.cmd("autocmd BufWritePost <buffer> lua vim.lsp.buf.format()")
+    end
+
+    -- if client.server_capabilities.documentFormattingProvider then
+    --     vim.api.nvim_create_autocmd("BufWritePre", {
+    --         group = vim.api.nvim_create_augroup("Format", { clear = true }),
+    --         buffer = bufnr,
+    --         callback = function() vim.lsp.buf.formatting_seq_sync() end
+    --     })
+    -- end
 
     -- vim.api.nvim_create_autocmd("CursorHold", {
     --     buffer = bufnr,
@@ -109,6 +121,26 @@ lsp_config.lua_ls.setup {
     }
 }
 
+lsp_config.ocamllsp.setup({
+    name = 'ocamllsp',
+    cmd = { 'ocamllsp' },
+    filetypes = { "ocaml", "ocaml.menhir", "ocaml.interface", "ocaml.ocamllex", "reason", "dune" },
+    root_dir = lsp_config.util.root_pattern("*.opam", "esy.json", "package.json", ".git", "dune-project",
+        "dune-workspace"),
+    capabilities = capabilities,
+    on_attach = on_attach,
+    -- settings = {
+    --     ocamllsp = {
+    --         diagnostics = {
+    --             on_open = true,
+    --             on_change = true,
+    --             on_save = true
+    --         },
+    --         debounce = 200
+    --     }
+    -- }
+})
+
 typescript.setup({
     server = {
         capabilities = capabilities,
@@ -124,3 +156,33 @@ lsp_config.denols.setup {
     root_dir = lsp_config.util.root_pattern("deno.json", "deno.jsonc")
 }
 
+lsp_config.astro.setup {
+    capabilities = capabilities,
+    on_attach = on_attach,
+}
+
+lsp_config.tailwindcss.setup {}
+
+-- vim.diagnostic.config({
+--     virtual_text = {
+--         prefix = "●"
+--     },
+--     signs = true,
+--     update_in_insert = true,
+--     underline = false,
+--     severity_sort = true,
+--     float = {
+--         border = "rounded",
+--         source = "always",
+--         header = "",
+--         prefix = "",
+--     },
+-- })
+--
+-- vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
+--     vim.lsp.diagnostic.on_publish_diagnostics, {
+--         underline = false,
+--         update_in_insert = true,
+--         virtual_text = { spacing = 4, prefix = "●" },
+--         severity_sort = true,
+--     })
