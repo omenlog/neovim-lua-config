@@ -53,37 +53,37 @@ keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
 
 -- Telescope
-keymap("n", "<leader>p", ":Telescope find_files<CR>" ,opts)
-keymap("n", "<leader>ff", ":Telescope find_files<CR>" ,opts)
-keymap("n", "<leader>fs", ":Telescope live_grep<CR>" ,opts)
-keymap("n", "<leader>fw", ":Telescope grep_string<CR>" ,opts)
-keymap("n", "<leader>fb", ":Telescope buffers<CR>" ,opts)
-keymap("n", "<leader>fh", ":Telescope help_tags<CR>" ,opts)
+keymap("n", "<leader>p", ":Telescope find_files<CR>", opts)
+keymap("n", "<leader>ff", ":Telescope find_files<CR>", opts)
+keymap("n", "<leader>fs", ":Telescope live_grep<CR>", opts)
+keymap("n", "<leader>fw", ":Telescope grep_string<CR>", opts)
+keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts)
+keymap("n", "<leader>fh", ":Telescope help_tags<CR>", opts)
 
 -- Buffers keymaps
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
 keymap("n", "<C-w>", ":bd<CR>", opts)
 keymap("n", "<C-b>", ":BufferLinePick<CR>", opts)
-keymap("n", "<leader>1",":BufferLineGoToBuffer 1<CR>", opts)
-keymap("n", "<leader>2",":BufferLineGoToBuffer 2<CR>", opts)
-keymap("n", "<leader>3",":BufferLineGoToBuffer 3<CR>", opts)
-keymap("n", "<leader>4",":BufferLineGoToBuffer 4<CR>", opts)
-keymap("n", "<leader>5",":BufferLineGoToBuffer 5<CR>", opts)
-keymap("n", "<leader>6",":BufferLineGoToBuffer 6<CR>", opts)
-keymap("n", "<leader>7",":BufferLineGoToBuffer 7<CR>", opts)
-keymap("n", "<leader>8",":BufferLineGoToBuffer 8<CR>", opts)
-keymap("n", "<leader>9",":BufferLineGoToBuffer 9<CR>", opts)
+keymap("n", "<leader>1", ":BufferLineGoToBuffer 1<CR>", opts)
+keymap("n", "<leader>2", ":BufferLineGoToBuffer 2<CR>", opts)
+keymap("n", "<leader>3", ":BufferLineGoToBuffer 3<CR>", opts)
+keymap("n", "<leader>4", ":BufferLineGoToBuffer 4<CR>", opts)
+keymap("n", "<leader>5", ":BufferLineGoToBuffer 5<CR>", opts)
+keymap("n", "<leader>6", ":BufferLineGoToBuffer 6<CR>", opts)
+keymap("n", "<leader>7", ":BufferLineGoToBuffer 7<CR>", opts)
+keymap("n", "<leader>8", ":BufferLineGoToBuffer 8<CR>", opts)
+keymap("n", "<leader>9", ":BufferLineGoToBuffer 9<CR>", opts)
 
--- Move text u and down in Normal mode 
+-- Move text u and down in Normal mode
 keymap("n", "∆", ":m .+1<CR>==", opts)
 keymap("n", "˚", ":m .-2<CR>==", opts)
 
--- Move text u and down in Visual mode 
+-- Move text u and down in Visual mode
 keymap("v", "∆", ":m .+1<CR>==", opts)
 keymap("v", "˚", ":m .-2<CR>==", opts)
 
--- Move text u and down in Visual Block mode 
+-- Move text u and down in Visual Block mode
 keymap("x", "∆", ":m '>+1<CR>gv=gv", opts)
 keymap("x", "˚", ":m '<-2<CR>gv=gv", opts)
 
@@ -94,8 +94,8 @@ keymap("v", "<S-d>", ":'<,'>t'><CR>", opts)
 keymap("n", "<leader>;", "A;<ESC>", opts)
 
 -- Git keymaps
-keymap("n","∫",":Git blame<CR>",opts);
-keymap("n","<leader>g",":LazyGit <CR>",opts);
+keymap("n", "∫", ":Git blame<CR>", opts);
+keymap("n", "<leader>g", ":LazyGit <CR>", opts);
 
 -- Luasnip keymaps
 keymap("i", "<C-n>", "<Plug>luasnip-next-choice", {})
@@ -104,11 +104,11 @@ keymap("i", "<C-p>", "<Plug>luasnip-previous-choice", {})
 keymap("s", "<C-p>", "<Plug>luasnip-previous-choice", {})
 
 -- Folding keymaps
-keymap('n', "<leader><leader>","za", {})
+keymap('n', "<leader><leader>", "za", {})
 
 -- tooling keymaps
-keymap('n', "<leader>t",":!npm run jest:update %<CR>", {})
-keymap('n', "<leader>td",":!deno test<CR>", {})
+keymap('n', "<leader>t", ":!npm run jest:update %<CR>", {})
+keymap('n', "<leader>td", ":!deno test<CR>", {})
 
 -- Peek Markdown keymap
-keymap('n', "<leader>mp","<cmd>lua require('peek').open()<CR>", {})
+keymap('n', "<leader>mp", "<cmd>lua require('peek').open()<CR>", {})

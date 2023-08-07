@@ -1,10 +1,6 @@
 -- plugins initialization
 require("user.plugins_init")
 
--- core configurations
-require("user.core.options")
-require("user.core.keymaps")
-
 -- plugins configurations
 require("user.plugins.colorschemes")
 require("user.plugins.treesitter")
@@ -19,3 +15,7 @@ require("user.plugins.nvimtree")
 require("user.plugins.comment")
 require("user.plugins.autocommands")
 require("user.plugins.snippets")
+
+-- core configurations
+require("user.core.options")
+require("user.core.keymaps")
