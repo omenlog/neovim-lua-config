@@ -50,6 +50,8 @@ local on_attach = function(client, bufnr)
     end, bufopts)
     vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
 
+    -- lsp formatting
+    vim.keymap.set('n', '<leader>f', "<cmd>lua vim.lsp.buf.format()<CR>", opts)
 
     -- lsp saga keymap
     vim.keymap.set({ "n", "v" }, "<leader>ca", "<cmd>Lspsaga code_action<CR>")
