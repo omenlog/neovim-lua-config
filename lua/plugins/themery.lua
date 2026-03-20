@@ -13,6 +13,16 @@ return {
 	{
 		"EdenEast/nightfox.nvim", name = "carbonfox", priority = 1000
 	},
+	{
+		"Mofiqul/dracula.nvim",
+		name = "dracula",
+		priority = 1000,
+	},
+	{
+		"rebelot/kanagawa.nvim",
+		name = "kanagawa",
+		priority = 1000,
+	},
 		{
 			"catppuccin/nvim",
 			name = "catppuccin",
@@ -37,7 +47,7 @@ return {
 		lazy = false,
 		config = function()
 			require("themery").setup({
-				themes = { "carbonfox", "catppuccin", "rose-pine" }
+				themes = { "carbonfox", "nightfox", "catppuccin", "rose-pine", "dracula", "kanagawa" }
 				-- add the config here
 			})
 		end
