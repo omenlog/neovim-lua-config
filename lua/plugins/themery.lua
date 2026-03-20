@@ -23,25 +23,25 @@ return {
 		name = "kanagawa",
 		priority = 1000,
 	},
-		{
-			"catppuccin/nvim",
-			name = "catppuccin",
-			priority = 1000,
-			config = function()
-				require("catppuccin").setup({
-					integrations = {
-						treesitter = true,
-					},
-					custom_highlights = function(colors)
-						return {
-							["@tag"] = { fg = colors.blue },
-							["@tag.attribute"] = { fg = colors.teal },
-							["@tag.delimiter"] = { fg = colors.sky },
-						}
-					end,
-				})
-			end,
-		},
+	{
+		"catppuccin/nvim",
+		name = "catppuccin",
+		priority = 1000,
+		config = function()
+			require("catppuccin").setup({
+				integrations = {
+					treesitter = true,
+				},
+				custom_highlights = function(colors)
+					return {
+						["@tag"] = { fg = colors.blue },
+						["@tag.attribute"] = { fg = colors.teal },
+						["@tag.delimiter"] = { fg = colors.sky },
+					}
+				end,
+			})
+		end,
+	},
 	{
 		"zaldih/themery.nvim",
 		lazy = false,
