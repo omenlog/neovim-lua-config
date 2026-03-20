@@ -35,6 +35,10 @@ keymap("n", "<leader>u", "<C-u>zz", opts)
 -- Split screen
 keymap("n", "<C-]>", ":vsplit<CR>", opts)
 keymap("n", "<C-[>", ":split<CR>", opts)
+keymap("n", "<C-h>", "<C-w>h", opts)
+keymap("n", "<C-j>", "<C-w>j", opts)
+keymap("n", "<C-k>", "<C-w>k", opts)
+keymap("n", "<C-l>", "<C-w>l", opts)
 
 -- Resize with arrows
 keymap("n", "<S-Up>", ":resize -2<CR>", opts)
