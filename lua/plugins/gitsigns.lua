@@ -74,8 +74,8 @@ return {
 						return '<Ignore>'
 					end, { expr = true, buffer = bufnr, desc = 'Prev hunk' })
 
-					vim.keymap.set('n', '<leader>sh', gs.stage_hunk, { buffer = bufnr, desc = 'Stage hunk' })
-					vim.keymap.set('n', '<leader>uh', gs.undo_stage_hunk, { buffer = bufnr, desc = 'Unstage hunk' })
+					vim.keymap.set('n', '<leader>hs', gs.stage_hunk, { buffer = bufnr, desc = 'Stage hunk' })
+					vim.keymap.set('n', '<leader>hu', gs.undo_stage_hunk, { buffer = bufnr, desc = 'Unstage hunk' })
 				end,
 			}
 		end
