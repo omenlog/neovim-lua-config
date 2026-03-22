@@ -4,6 +4,10 @@ vim.opt.relativenumber = true
 vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
 
+-- Highlight current line
+vim.opt.cursorline = true
+vim.opt.cursorlineopt = "number"
+
 -- Folding
 vim.opt.foldmethod = "indent"
 vim.opt.foldlevel = 99
@@ -18,7 +22,6 @@ vim.g.mapleader = " "
 
 -- gui colors
 vim.opt.termguicolors = true
-
 
 require("config.keymaps")
 require("config.lazy")
