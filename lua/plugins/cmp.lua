@@ -3,7 +3,7 @@ return {
     "saghen/blink.cmp",
     version = "*",
     opts = {
-      keymap = { preset = "default" },
+      keymap = { preset = "enter" },
       appearance = {
         nerd_font_variant = "mono",
       },
