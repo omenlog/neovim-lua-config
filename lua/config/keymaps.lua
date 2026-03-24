@@ -21,7 +21,6 @@ vim.g.maplocalleader = " "
 keymap('i', "jj", '<ESC>:w<CR>', opts);
 keymap('i', "kk", '<ESC>:w<CR>', opts);
 
-
 -- code navigation
 keymap("n", "<leader>cn", ":Navbuddy<CR>", opts)
 
@@ -116,3 +115,5 @@ keymap('n', "<leader>mp", "<cmd>lua require('peek').open()<CR>", {})
 -- Oil
 keymap('n', '-', "<CMD>Oil<CR>", { desc = 'Open parent directory' })
 
+-- Terminal
+keymap('n', '<leader>z', ":terminal<CR>", { desc = 'Open parent directory' })
