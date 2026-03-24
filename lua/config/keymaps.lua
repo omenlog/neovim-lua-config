@@ -17,6 +17,7 @@ keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
+-- Save keymaps
 keymap('i', "jj", '<ESC>:w<CR>', opts);
 keymap('i', "kk", '<ESC>:w<CR>', opts);
 
@@ -111,3 +112,7 @@ keymap('n', "<leader>td", ":!deno test<CR>", {})
 
 -- Peek Markdown keymap
 keymap('n', "<leader>mp", "<cmd>lua require('peek').open()<CR>", {})
+
+-- Oil
+keymap('n', '-', "<CMD>Oil<CR>", { desc = 'Open parent directory' })
+
