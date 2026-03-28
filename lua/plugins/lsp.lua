@@ -16,6 +16,7 @@ return {
         ensure_installed = {
           "lua_ls",
           "ts_ls",        -- TypeScript / JavaScript
+          "eslint",       -- ESLint diagnostics for JS/TS
           "html",
           "cssls",
           "tailwindcss",
@@ -49,17 +50,47 @@ return {
         vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
         vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
         vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
+        vim.keymap.set("n", "<leader>ai", function()
+          vim.lsp.buf.code_action({
+            apply = true,
+            context = { only = { "source.addMissingImports.ts" } },
+          })
+        end, opts)
+        vim.keymap.set("n", "<leader>oi", function()
+          vim.lsp.buf.code_action({
+            apply = true,
+            context = { only = { "source.organizeImports.ts" } },
+          })
+        end, opts)
       end
 
       -- setup handlers were removed in mason-lspconfig; configure servers directly.
       local default_servers = { "ts_ls", "html", "cssls", "tailwindcss", "jsonls" }
       for _, server_name in ipairs(default_servers) do
-        vim.lsp.config(server_name, {
+        local config = {
           capabilities = capabilities,
           on_attach = on_attach,
-        })
+        }
+
+        if server_name == "ts_ls" then
+          config.init_options = {
+            preferences = {
+              includeCompletionsForModuleExports = true,
+              includeCompletionsForImportStatements = true,
+            },
+          }
+        end
+
+        vim.lsp.config(server_name, config)
         vim.lsp.enable(server_name)
       end
+
+      -- ESLint (catches no-undef and other lint diagnostics in JS/TS files)
+      vim.lsp.config("eslint", {
+        capabilities = capabilities,
+        on_attach = on_attach,
+      })
+      vim.lsp.enable("eslint")
 
       -- ✨ custom config for Lua (Neovim)
       vim.lsp.config("lua_ls", {
