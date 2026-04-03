@@ -24,8 +24,6 @@ vim.api.nvim_create_autocmd({ "BufEnter", "CursorHold", "CursorHoldI", "FocusGai
 	end,
 })
 
-
-
 -- Folding
 vim.opt.foldmethod = "indent"
 vim.opt.foldlevel = 99
