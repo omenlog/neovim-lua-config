@@ -26,6 +26,7 @@ keymap("n", "<leader>cn", ":Navbuddy<CR>", opts)
 
 -- buffer keymaps
 keymap("n", "<leader>w", ":close<CR>", opts)
+keymap("n", "<leader>kw", ":bufdo bd<CR>", opts)
 
 -- Better vertical movement
 keymap("n", "<leader>d", "<C-d>zz", opts)
