@@ -22,6 +22,7 @@ return {
         css = { "prettier" },
         scss = { "prettier" },
         html = { "prettier" },
+        astro = { "prettier" },
         json = { "prettier" },
         yaml = { "prettier" },
         markdown = { "prettier" },
