@@ -1,4 +1,4 @@
-require("options")
+require("config.options")
 require("config.keymaps")
 
 local auto_reload_external = vim.api.nvim_create_augroup("auto_reload_external", { clear = true })
