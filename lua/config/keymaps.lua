@@ -120,4 +120,4 @@ keymap('n', '-', "<CMD>Oil<CR>", { desc = 'Open parent directory' })
 keymap('n', '<leader>z', ":terminal<CR>", { desc = 'Open parent directory' })
 
 -- Lazy
-keymap('n', '¬', ":Lazy sync<CR>", { desc = 'Open parent directory' })
+keymap('n', '<leader>ls', ":Lazy sync<CR>", { desc = 'Open parent directory' })
