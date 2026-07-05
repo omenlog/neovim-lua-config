@@ -15,6 +15,7 @@ return {
         "json",
         "yaml",
         "markdown",
+        "astro",
       }
 
       vim.api.nvim_create_autocmd("FileType", {

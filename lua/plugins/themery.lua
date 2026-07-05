@@ -47,7 +47,19 @@ return {
 		lazy = false,
 		config = function()
 			require("themery").setup({
-				themes = { "carbonfox", "nightfox", "catppuccin", "rose-pine", "dracula", "kanagawa" }
+				themes = {
+					"carbonfox",
+					"dayfox",
+					"nightfox",
+					"duskfox",
+					"terafox",
+					"nordfox",
+					"catppuccin",
+					"rose-pine",
+					"rose-pine-moon",
+					"dracula",
+					"kanagawa"
+				}
 				-- add the config here
 			})
 		end

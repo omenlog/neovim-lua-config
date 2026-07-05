@@ -14,5 +14,8 @@ return {
 	s("imn", fmt("import {{{}}} from '{}';", { i(1), i(2) })),
 	-- Exports snippets
 	s("exd", fmt("export default {};", { i(1) })),
-	s("exn", fmt("export {{{}}};", { i(1) }))
+	s("exn", fmt("export {{{}}};", { i(1) })),
+
+	-- React hook
+	s("ue", fmt("useEffect(() => {{ {} }}, [{}]);", { i(2), i(1) })),
 }
