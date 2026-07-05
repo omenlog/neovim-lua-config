@@ -95,7 +95,7 @@ keymap("n", "<leader>;", "A;<ESC>", opts)
 
 -- Git keymaps
 keymap("n", "∫", ":Git blame<CR>", opts);
-keymap("n", "<leader>g", ":LazyGit <CR>", opts);
+keymap("n", "<leader>g", ":Neogit<CR>", opts);
 
 -- Luasnip keymaps
 keymap("i", "<C-n>", "<Plug>luasnip-next-choice", {})
