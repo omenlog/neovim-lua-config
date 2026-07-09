@@ -29,7 +29,7 @@ Personal Neovim configuration organized around a small core and modular plugin s
 - `lua/config/options.lua`
   - editor options
   - UI behavior
-  - global settings and provider toggles
+  - global settings
 
 - `lua/config/keymaps.lua`
   - custom keybindings
