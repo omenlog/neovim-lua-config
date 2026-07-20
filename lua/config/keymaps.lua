@@ -1,4 +1,5 @@
 local opts = { noremap = true, silent = true }
+local utils = require('config.utils')
 
 -- Shorten function name
 local keymap = vim.api.nvim_set_keymap
@@ -31,6 +32,10 @@ keymap("n", "<leader>kw", ":bufdo bd<CR>", opts)
 -- Better vertical movement
 keymap("n", "<leader>d", "<C-d>zz", opts)
 keymap("n", "<leader>u", "<C-u>zz", opts)
+
+-- Keymaps to copy in the clipboard content for the LLM
+vim.keymap.set("n", "<leader>cp", function() utils.copy_ref({}) end, { desc = "Copy file path" })
+vim.keymap.set("x", "<leader>cp", function() utils.copy_ref({ visual = true }) end, { desc = "Copy file path" })
 
 -- Split screen
 keymap("n", "<C-]>", ":vsplit<CR>", opts)
