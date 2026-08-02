@@ -12,7 +12,7 @@ return {
 				pickers = {
 					find_files = {
 						hidden = true,
-						find_command = { 'fd', '--type', 'f', '--hidden', '--exclude', '.git' },
+						find_command = { 'fd', '--type', 'f', '--hidden', '--exclude', '.git', '--exclude', 'node_modules' },
 					}
 				},
 			})
