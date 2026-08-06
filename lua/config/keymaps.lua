@@ -35,8 +35,8 @@ vim.keymap.set("n", "<leader>cp", function() utils.copy_ref({}) end, { desc = "C
 vim.keymap.set("x", "<leader>cp", function() utils.copy_ref({ visual = true }) end, { desc = "Copy file path" })
 
 -- Split screen
-keymap("n", "<C-]>", ":vsplit<CR>", opts)
-keymap("n", "<C-[>", ":split<CR>", opts)
+keymap("n", "<leader>]", ":vsplit<CR>", opts)
+keymap("n", "<leader>[", ":split<CR>", opts)
 
 -- Resize with arrows
 keymap("n", "<S-Up>", ":resize -2<CR>", opts)
