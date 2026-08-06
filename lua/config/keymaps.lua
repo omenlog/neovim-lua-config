@@ -22,9 +22,6 @@ vim.g.maplocalleader = " "
 keymap('i', "jj", '<ESC>:w<CR>', opts);
 keymap('i', "kk", '<ESC>:w<CR>', opts);
 
--- code navigation
-keymap("n", "<leader>cn", ":Navbuddy<CR>", opts)
-
 -- buffer keymaps
 keymap("n", "<leader>w", ":close<CR>", opts)
 keymap("n", "<leader>kw", ":bufdo bd<CR>", opts)
@@ -122,7 +119,10 @@ keymap('n', "<leader>mp", "<cmd>lua require('peek').open()<CR>", {})
 keymap('n', '-', "<CMD>Oil<CR>", { desc = 'Open parent directory' })
 
 -- Terminal
-keymap('n', '<leader>z', ":terminal<CR>", { desc = 'Open parent directory' })
+keymap('n', '<leader>z', ":terminal<CR>", { desc = 'Open the terminal' })
 
 -- Lazy
-keymap('n', '<leader>ls', ":Lazy sync<CR>", { desc = 'Open parent directory' })
+keymap('n', '<leader>ls', ":Lazy sync<CR>", { desc = 'Sync lazy plugins' })
+
+-- cancel search
+keymap('n', '<leader>cs', ":noh <CR>", { desc = 'Clear the previous search' })
