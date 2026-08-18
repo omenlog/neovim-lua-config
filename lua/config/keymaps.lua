@@ -19,7 +19,6 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 -- Save keymaps
-keymap('i', "jj", '<ESC>:w<CR>', opts);
 keymap('i', "kk", '<ESC>:w<CR>', opts);
 
 -- buffer keymaps
