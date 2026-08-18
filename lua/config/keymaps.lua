@@ -96,7 +96,12 @@ keymap("n", "<leader>;", "A;<ESC>", opts)
 
 -- Git keymaps
 keymap("n", "∫", ":Git blame<CR>", opts);
-keymap("n", "<leader>g", ":LazyGit<CR>", opts);
+
+if vim.fn.executable("lazygit") == 1 then
+	vim.keymap.set("n", "<leader>g", function()
+		Snacks.lazygit({ cwd = vim.fs.root(0, { ".git" }) or vim.fn.getcwd() })
+	end, { desc = "Lazygit (Git Root)" })
+end
 
 -- Luasnip keymaps
 keymap("i", "<C-n>", "<Plug>luasnip-next-choice", {})
