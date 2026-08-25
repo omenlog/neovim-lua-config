@@ -56,20 +56,30 @@ return {
 
 					vim.keymap.set('n', ']c', function()
 						if vim.wo.diff then
-							return ']c'
+							return ']czz'
 						end
+
 						vim.schedule(function()
-							gs.next_hunk({ target = 'all' })
+							gs.nav_hunk('next', { target = 'all' }, function()
+								vim.schedule(function()
+									vim.cmd.normal({ 'zz', bang = true })
+								end)
+							end)
 						end)
 						return '<Ignore>'
 					end, { expr = true, buffer = bufnr, desc = 'Next hunk' })
 
 					vim.keymap.set('n', '[c', function()
 						if vim.wo.diff then
-							return '[c'
+							return '[czz'
 						end
+
 						vim.schedule(function()
-							gs.prev_hunk({ target = 'all' })
+							gs.nav_hunk('prev', { target = 'all' }, function()
+								vim.schedule(function()
+									vim.cmd.normal({ 'zz', bang = true })
+								end)
+							end)
 						end)
 						return '<Ignore>'
 					end, { expr = true, buffer = bufnr, desc = 'Prev hunk' })
