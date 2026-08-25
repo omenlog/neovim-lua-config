@@ -22,6 +22,7 @@ return {
 					"tailwindcss",
 					"jsonls",
 					"astro",
+					"gopls", -- Go language server
 				},
 			})
 		end,
@@ -69,7 +70,7 @@ return {
 			end
 
 			-- setup handlers were removed in mason-lspconfig; configure servers directly.
-			local default_servers = { "ts_ls", "html", "cssls", "tailwindcss", "jsonls", "astro" }
+			local default_servers = { "ts_ls", "html", "cssls", "tailwindcss", "jsonls", "astro", "gopls" }
 			for _, server_name in ipairs(default_servers) do
 				local config = {
 					capabilities = capabilities,
