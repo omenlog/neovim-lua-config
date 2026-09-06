@@ -125,3 +125,14 @@ keymap('n', '<leader>ls', ":Lazy sync<CR>", { desc = 'Sync lazy plugins' })
 
 -- cancel search
 keymap('n', '<leader>cs', ":noh <CR>", { desc = 'Clear the previous search' })
+
+-- Chainsaw
+vim.keymap.set({ "n", "x" }, "<leader>cv", function()
+	require("chainsaw").variableLog()
+	vim.cmd("write")
+end, { desc = "Chainsaw: log variable" })
+
+vim.keymap.set({ "n", "x" }, "<leader>cr", function()
+	require("chainsaw").removeLogs()
+	vim.cmd("write")
+end, { desc = "Chainsaw: remove logs" })
