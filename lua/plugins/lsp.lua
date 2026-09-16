@@ -15,7 +15,7 @@ return {
 			require("mason-lspconfig").setup({
 				ensure_installed = {
 					"lua_ls",
-					"ts_ls",  -- TypeScript / JavaScript
+					"ts_ls", -- TypeScript / JavaScript
 					"eslint", -- ESLint diagnostics for JS/TS
 					"html",
 					"cssls",
